@@ -2,23 +2,33 @@ h1 {
 	display: inline-block;
 }
 
+main {
+	margin-top: 40px;
+}
+
+h3 {
+	font-size: 25px;
+}
+
 button.new-game {
 	margin-left: 20px;
 
 }
 
-main {
-	margin-top: 20px;
+div[class*="board"] {
+	width: 31.33%;
+	display: inline-block;
+	margin: 1%;
+	text-align: center;
 }
 
-div[class*="board"] {
+div.card {
 	font-size: 0px;
-	display: inline-block;
 	border: 5px solid black;
 	border-radius: 5px;
 	padding: 15px;
 	padding-right: 15px;
-	margin: 5px;
+	width: 100%;
 }
 
 div.cell {
@@ -45,7 +55,12 @@ div.br {
 	border-right: 3px solid black;
 }
 
+div.info-field {
+	margin-top: 5px;
+	height: 40px;
+	visibility: hidden;
+}
+
 section.hidden {
 	display: none;
 }
-
