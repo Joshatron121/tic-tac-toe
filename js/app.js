@@ -188,7 +188,6 @@ $(function(){
 
 	var deleteBoard = function(board){
 		$('.board-' + board).remove();
-		gameList.splice(board, 1);
 	}
 
 	newGame();

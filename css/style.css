@@ -9,6 +9,7 @@ h1 {
 	display: inline-block;
 }
 
+
 body {
 	background-color: #b5c286;
 }
@@ -19,6 +20,18 @@ main {
 
 h3 {
 	font-size: 25px;
+}
+
+button {
+	background-color: BlanchedAlmond;
+	border: 1px solid black;
+	outline: none;
+	border-radius: 5px;
+}
+
+button:hover {
+	cursor: pointer;
+	background-color: #e5d3b8;
 }
 
 button.new-game {
@@ -39,7 +52,7 @@ div.card {
 	padding: 15px;
 	padding-right: 15px;
 	width: 100%;
-	background-color: #c2b186;
+	background-color: BlanchedAlmond;
 }
 
 div.cell {
