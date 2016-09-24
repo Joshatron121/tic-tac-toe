@@ -49,7 +49,6 @@ $(function(){
 
 		// Clone new board from template
 		var newBoard = $('.templates .board').clone();
-		console.log(newBoard)
 
 		// Remove the default board class from template
 		newBoard.removeClass('board');
@@ -64,9 +63,8 @@ $(function(){
 	};
 
 	var playerTurn = function(board, cell){
-		console.log(board)
 		clearError(board)
-		console.log(gameList);
+
 		// Check who's turn it is (if even, x's turn)
 		if(gameList[board].won || gameList[board].draw){
 			buildError(board, 'This game has been completed, restart or try a new one!')
@@ -99,55 +97,46 @@ $(function(){
 	var checkWin = function(board, player){
 		var thisLayout = gameList[board].boardLayout[player];
 		if(gameList[board].playerTurns == 9){
-			console.log('draw')
 			setWin(board, 'draw')
 		} else if(thisLayout.a1){
 			if(thisLayout.a2){
 				if(thisLayout.a3){
-					console.log('win 1')
 					setWin(board, player);
 				}
 			} else if(thisLayout.b1){
 				if(thisLayout.c1){
-					console.log('win 2')
 					setWin(board,player);
 				}
 			} else if(thisLayout.b2){
 				if(thisLayout.c3){
-					console.log('win 3')
 					setWin(board, player);
 				}
 			}
 		} else if (thisLayout.b1){
 			if(thisLayout.b2){
-				if(thisLayout.b3){
-					console.log('win 4');
+				if(thisLayout.b3){;
 					setWin(board, player);
 				}
 			}
 		} else if (thisLayout.c1){
 			if(thisLayout.c2){
 				if(thisLayout.c3){
-					console.log('win 5')
 					setWin(board, player);
 				}
 			} else if (thisLayout.b2){
 				if(thisLayout.a3){
-					console.log('win 6')
 					setWin(board, player);
 				}
 			}
 		} else if (thisLayout.a2){
 			if(thisLayout.b2){
 				if(thisLayout.c2){
-					console.log('win 7')
 					setWin(board, player);
 				}
 			}
 		} else if (thisLayout.a3){
 			if(thisLayout.b3){
 				if(thisLayout.c3){
-					console.log('win 8')
 					setWin(board, player);
 				}
 			}
@@ -197,6 +186,11 @@ $(function(){
 		$('.board-' + board + ' .cell').text('\xa0');	
 	}
 
+	var deleteBoard = function(board){
+		$('.board-' + board).remove();
+		gameList.splice(board, 1);
+	}
+
 	newGame();
 
 	$('.game-row').on('click', '.cell', function(){
@@ -217,4 +211,10 @@ $(function(){
 		var thisMoveBoard = determineBoard(clickedBoard);
 		clearBoard(thisMoveBoard)
 	});
+
+	$('.game-row').on('click', '.remove-button', function(){
+		var clickedBoard = $(this).parent().parent();
+		var thisMoveBoard = determineBoard(clickedBoard);
+		deleteBoard(thisMoveBoard)
+	})
 })
