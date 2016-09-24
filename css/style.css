@@ -1,5 +1,17 @@
+header {
+	background-color: #c29386;
+	border-bottom: 2px solid black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
 h1 {
 	display: inline-block;
+}
+
+
+body {
+	background-color: #b5c286;
 }
 
 main {
@@ -10,9 +22,20 @@ h3 {
 	font-size: 25px;
 }
 
+button {
+	background-color: BlanchedAlmond;
+	border: 1px solid black;
+	outline: none;
+	border-radius: 5px;
+}
+
+button:hover {
+	cursor: pointer;
+	background-color: #e5d3b8;
+}
+
 button.new-game {
 	margin-left: 20px;
-
 }
 
 div[class*="board"] {
@@ -29,6 +52,7 @@ div.card {
 	padding: 15px;
 	padding-right: 15px;
 	width: 100%;
+	background-color: BlanchedAlmond;
 }
 
 div.cell {
@@ -36,7 +60,7 @@ div.cell {
 	display: inline-block;
 	width: 33.33%;
 	text-align: center;
-	color: darkgrey;
+	color: black;
 }
 
 div.bt {
@@ -63,4 +87,8 @@ div.info-field {
 
 section.hidden {
 	display: none;
+}
+
+button.remove-button {
+	margin-left: 5px;
 }
